@@ -22,33 +22,10 @@ class MainActivity : AppCompatActivity() {
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment) as ArFragment
 
         val letterNames = listOf(
-            "letters_A.sfb",
-            "letters_B.sfb",
-            "letters_C.sfb",
-            "letters_D.sfb",
-            "letters_E.sfb",
-            "letters_F.sfb",
-            "letters_G.sfb",
-            "letters_H.sfb",
-            "letters_I.sfb",
-            "letters_J.sfb",
-            "letters_K.sfb",
-            "letters_L.sfb",
-            "letters_M.sfb",
-            "letters_N.sfb",
-            "letters_O.sfb",
-            "letters_P.sfb",
-            "letters_Q.sfb",
-            "letters_R.sfb",
-            "letters_S.sfb",
-            "letters_T.sfb",
-            "letters_U.sfb",
-            "letters_V.sfb",
-            "letters_W.sfb",
-            "letters_X.sfb",
-            "letters_Y.sfb",
-            "letters_Z.sfb"
-        )
+            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
+            "V", "W", "X", "Y", "Z"
+        ).map { "letters_$it.sfb" }
+
         letterNames.forEach { modelName ->
             ModelRenderable.builder()
                 .setSource(this, Uri.parse(modelName))
