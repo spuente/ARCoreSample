@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.Node
+import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
@@ -11,7 +12,8 @@ import com.google.ar.sceneform.ux.TransformableNode
 class MainActivity : AppCompatActivity() {
 
     private lateinit var arFragment: ArFragment
-    private lateinit var renderable: ModelRenderable
+    private lateinit var letterRenderable1: ModelRenderable
+    private lateinit var letterRenderable2: ModelRenderable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +23,13 @@ class MainActivity : AppCompatActivity() {
         ModelRenderable.builder()
             .setSource(this, R.raw.letters_1)
             .build()
-            .thenAccept { this.renderable = it }
+            .thenAccept { this.letterRenderable1 = it }
+            .exceptionally { null }
+
+        ModelRenderable.builder()
+            .setSource(this, R.raw.letters_2)
+            .build()
+            .thenAccept { this.letterRenderable2 = it }
             .exceptionally { null }
 
         arFragment.arSceneView.planeRenderer.isEnabled = true
@@ -34,9 +42,18 @@ class MainActivity : AppCompatActivity() {
             val parentNode = TransformableNode(arFragment.transformationSystem)
             parentNode.setParent(anchorNode)
             parentNode.select()
-            val node = Node()
-            node.setParent(parentNode)
-            node.renderable = renderable
+            val node1 = Node()
+            node1.setParent(parentNode)
+            node1.renderable = letterRenderable1
+
+            val x1 = parentNode.children[0].localPosition.x + 0.1f
+            val y1 = parentNode.children[0].localPosition.y + 0.0f
+            val z1 = parentNode.children[0].localPosition.z + 0.0f
+            val node2 = Node()
+            node2.setParent(parentNode)
+            node2.localPosition = Vector3(x1, y1, z1)
+            node2.renderable = letterRenderable2
+
         }
     }
 }
