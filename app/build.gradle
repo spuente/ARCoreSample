@@ -48,3 +48,8 @@ sceneform.asset('sampledata/letters_2.obj',
         'default',
         'sampledata/letters_2.sfa',
         'src/main/res/raw/letters_2')
+
+sceneform.asset('sampledata/letters_3.obj',
+        'default',
+        'sampledata/letters_3.sfa',
+        'src/main/res/raw/letters_3')
