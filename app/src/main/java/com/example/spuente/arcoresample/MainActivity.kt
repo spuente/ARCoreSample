@@ -10,8 +10,8 @@ import com.google.ar.sceneform.ux.TransformableNode
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var arFragment: ArFragment
-    lateinit var renderable: ModelRenderable
+    private lateinit var arFragment: ArFragment
+    private lateinit var renderable: ModelRenderable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
