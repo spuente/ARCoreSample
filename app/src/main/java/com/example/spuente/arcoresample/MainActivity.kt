@@ -46,10 +46,10 @@ class MainActivity : AppCompatActivity() {
 
             val lettersNamesToDisplay = textToDisplay.map { "${it.toUpperCase()}" }
             for ((index, letterName) in lettersNamesToDisplay.withIndex()) {
-                val offsetX = if (index == 0) 0.0f else 0.1f
+                val offsetX = if (index == 0) 0f else 0.1f
                 val x = parentNode.children[index].localPosition.x + offsetX
-                val y = parentNode.children[index].localPosition.y + 0.0f
-                val z = parentNode.children[index].localPosition.z + 0.0f
+                val y = parentNode.children[index].localPosition.y
+                val z = parentNode.children[index].localPosition.z
                 val node = Node()
                 node.setParent(parentNode)
                 node.localPosition = Vector3(x, y, z)
