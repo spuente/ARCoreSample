@@ -52,3 +52,118 @@ sceneform.asset('sampledata/letters_C.obj',
         'default',
         'sampledata/letters_C.sfa',
         'src/main/assets/letters_C')
+
+sceneform.asset('sampledata/letters_D.obj',
+        'default',
+        'sampledata/letters_D.sfa',
+        'src/main/assets/letters_D')
+
+sceneform.asset('sampledata/letters_E.obj',
+        'default',
+        'sampledata/letters_E.sfa',
+        'src/main/assets/letters_E')
+
+sceneform.asset('sampledata/letters_F.obj',
+        'default',
+        'sampledata/letters_F.sfa',
+        'src/main/assets/letters_F')
+
+sceneform.asset('sampledata/letters_G.obj',
+        'default',
+        'sampledata/letters_G.sfa',
+        'src/main/assets/letters_G')
+
+sceneform.asset('sampledata/letters_H.obj',
+        'default',
+        'sampledata/letters_H.sfa',
+        'src/main/assets/letters_H')
+
+sceneform.asset('sampledata/letters_I.obj',
+        'default',
+        'sampledata/letters_I.sfa',
+        'src/main/assets/letters_I')
+
+sceneform.asset('sampledata/letters_J.obj',
+        'default',
+        'sampledata/letters_J.sfa',
+        'src/main/assets/letters_J')
+
+sceneform.asset('sampledata/letters_K.obj',
+        'default',
+        'sampledata/letters_K.sfa',
+        'src/main/assets/letters_K')
+
+sceneform.asset('sampledata/letters_L.obj',
+        'default',
+        'sampledata/letters_L.sfa',
+        'src/main/assets/letters_L')
+
+sceneform.asset('sampledata/letters_M.obj',
+        'default',
+        'sampledata/letters_M.sfa',
+        'src/main/assets/letters_M')
+
+sceneform.asset('sampledata/letters_N.obj',
+        'default',
+        'sampledata/letters_N.sfa',
+        'src/main/assets/letters_N')
+
+sceneform.asset('sampledata/letters_O.obj',
+        'default',
+        'sampledata/letters_O.sfa',
+        'src/main/assets/letters_O')
+
+sceneform.asset('sampledata/letters_P.obj',
+        'default',
+        'sampledata/letters_P.sfa',
+        'src/main/assets/letters_P')
+
+sceneform.asset('sampledata/letters_Q.obj',
+        'default',
+        'sampledata/letters_Q.sfa',
+        'src/main/assets/letters_Q')
+
+sceneform.asset('sampledata/letters_R.obj',
+        'default',
+        'sampledata/letters_R.sfa',
+        'src/main/assets/letters_R')
+
+sceneform.asset('sampledata/letters_S.obj',
+        'default',
+        'sampledata/letters_S.sfa',
+        'src/main/assets/letters_S')
+
+sceneform.asset('sampledata/letters_T.obj',
+        'default',
+        'sampledata/letters_T.sfa',
+        'src/main/assets/letters_T')
+
+sceneform.asset('sampledata/letters_U.obj',
+        'default',
+        'sampledata/letters_U.sfa',
+        'src/main/assets/letters_U')
+
+sceneform.asset('sampledata/letters_V.obj',
+        'default',
+        'sampledata/letters_V.sfa',
+        'src/main/assets/letters_V')
+
+sceneform.asset('sampledata/letters_W.obj',
+        'default',
+        'sampledata/letters_W.sfa',
+        'src/main/assets/letters_W')
+
+sceneform.asset('sampledata/letters_X.obj',
+        'default',
+        'sampledata/letters_X.sfa',
+        'src/main/assets/letters_X')
+
+sceneform.asset('sampledata/letters_Y.obj',
+        'default',
+        'sampledata/letters_Y.sfa',
+        'src/main/assets/letters_Y')
+
+sceneform.asset('sampledata/letters_Z.obj',
+        'default',
+        'sampledata/letters_Z.sfa',
+        'src/main/assets/letters_Z')
