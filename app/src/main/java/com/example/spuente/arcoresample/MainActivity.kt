@@ -13,32 +13,23 @@ import com.google.ar.sceneform.ux.TransformableNode
 class MainActivity : AppCompatActivity() {
 
     private lateinit var arFragment: ArFragment
-    private lateinit var letterRenderable1: ModelRenderable
-    private lateinit var letterRenderable2: ModelRenderable
-    private lateinit var letterRenderable3: ModelRenderable
+    private var letterRenderablesMap = mutableMapOf<String, ModelRenderable>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment) as ArFragment
 
-        ModelRenderable.builder()
-            .setSource(this, Uri.parse("letters_1.sfb"))
-            .build()
-            .thenAccept { this.letterRenderable1 = it }
-            .exceptionally { null }
-
-        ModelRenderable.builder()
-            .setSource(this, Uri.parse("letters_2.sfb"))
-            .build()
-            .thenAccept { this.letterRenderable2 = it }
-            .exceptionally { null }
-
-        ModelRenderable.builder()
-            .setSource(this, Uri.parse("letters_3.sfb"))
-            .build()
-            .thenAccept { this.letterRenderable3 = it }
-            .exceptionally { null }
+        val letterNames = listOf("letters_1.sfb", "letters_2.sfb", "letters_3.sfb")
+        letterNames.forEach { modelName ->
+            ModelRenderable.builder()
+                .setSource(this, Uri.parse(modelName))
+                .build()
+                .thenAccept { this.letterRenderablesMap[modelName] = it }
+                .exceptionally { null }
+        }
 
         arFragment.arSceneView.planeRenderer.isEnabled = true
 
@@ -52,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             parentNode.select()
             val node1 = Node()
             node1.setParent(parentNode)
-            node1.renderable = letterRenderable1
+            node1.renderable = letterRenderablesMap[letterNames[0]]
 
             val x1 = parentNode.children[1].localPosition.x + 0.1f
             val y1 = parentNode.children[1].localPosition.y + 0.0f
@@ -60,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             val node2 = Node()
             node2.setParent(parentNode)
             node2.localPosition = Vector3(x1, y1, z1)
-            node2.renderable = letterRenderable2
+            node2.renderable = letterRenderablesMap[letterNames[1]]
 
             val x2 = parentNode.children[2].localPosition.x + 0.1f
             val y2 = parentNode.children[2].localPosition.y + 0.0f
@@ -68,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             val node3 = Node()
             node3.setParent(parentNode)
             node3.localPosition = Vector3(x2, y2, z2)
-            node3.renderable = letterRenderable3
+            node3.renderable = letterRenderablesMap[letterNames[2]]
         }
     }
 }
