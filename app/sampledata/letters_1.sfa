@@ -36,6 +36,7 @@
     file: 'sampledata/letters_1.obj',
     name: 'letters_1',
     recenter: 'root',
+    scale: 0.15,
   },
   version: '0.52:1',
 }
