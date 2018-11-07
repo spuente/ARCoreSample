@@ -38,33 +38,17 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-
-sceneform.asset('sampledata/letters_1.obj',
+sceneform.asset('sampledata/letters_A.obj',
         'default',
-        'sampledata/letters_1.sfa',
-        'src/main/res/raw/letters_1')
+        'sampledata/letters_A.sfa',
+        'src/main/assets/letters_A')
 
-sceneform.asset('sampledata/letters_2.obj',
+sceneform.asset('sampledata/letters_B.obj',
         'default',
-        'sampledata/letters_2.sfa',
-        'src/main/res/raw/letters_2')
+        'sampledata/letters_B.sfa',
+        'src/main/assets/letters_B')
 
-sceneform.asset('sampledata/letters_3.obj',
+sceneform.asset('sampledata/letters_C.obj',
         'default',
-        'sampledata/letters_3.sfa',
-        'src/main/res/raw/letters_3')
-
-sceneform.asset('sampledata/letters_1.obj',
-        'default',
-        'sampledata/letters_1.sfa',
-        'src/main/assets/letters_1')
-
-sceneform.asset('sampledata/letters_2.obj',
-        'default',
-        'sampledata/letters_2.sfa',
-        'src/main/assets/letters_2')
-
-sceneform.asset('sampledata/letters_3.obj',
-        'default',
-        'sampledata/letters_3.sfa',
-        'src/main/assets/letters_3')
+        'sampledata/letters_C.sfa',
+        'src/main/assets/letters_C')

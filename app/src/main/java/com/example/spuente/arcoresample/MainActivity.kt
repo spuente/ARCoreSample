@@ -16,13 +16,11 @@ class MainActivity : AppCompatActivity() {
     private var letterRenderablesMap = mutableMapOf<String, ModelRenderable>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment) as ArFragment
 
-        val letterNames = listOf("letters_1.sfb", "letters_2.sfb", "letters_3.sfb")
+        val letterNames = listOf("letters_A.sfb", "letters_B.sfb", "letters_C.sfb")
         letterNames.forEach { modelName ->
             ModelRenderable.builder()
                 .setSource(this, Uri.parse(modelName))

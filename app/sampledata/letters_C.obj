@@ -1,6 +1,6 @@
 # Blender v2.79 (sub 0) OBJ File: 'letters_in_3d.blend'
 # www.blender.org
-mtllib letters_3.mtl
+mtllib letters_C.mtl
 o Text
 v 0.788472 0.279001 0.156907
 v 0.768003 0.289306 0.156770
