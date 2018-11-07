@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             parentNode.setParent(anchorNode)
             parentNode.select()
 
-            val lettersNamesToDisplay = textToDisplay.map { "$it" }
+            val lettersNamesToDisplay = textToDisplay.map { "${it.toUpperCase()}" }
             for ((index, letterName) in lettersNamesToDisplay.withIndex()) {
                 val offsetX = if (index == 0) 0.0f else 0.1f
                 val x = parentNode.children[index].localPosition.x + offsetX
