@@ -1,5 +1,6 @@
 package com.example.spuente.arcoresample
 
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.google.ar.sceneform.AnchorNode
@@ -22,19 +23,19 @@ class MainActivity : AppCompatActivity() {
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment) as ArFragment
 
         ModelRenderable.builder()
-            .setSource(this, R.raw.letters_1)
+            .setSource(this, Uri.parse("letters_1.sfb"))
             .build()
             .thenAccept { this.letterRenderable1 = it }
             .exceptionally { null }
 
         ModelRenderable.builder()
-            .setSource(this, R.raw.letters_2)
+            .setSource(this, Uri.parse("letters_2.sfb"))
             .build()
             .thenAccept { this.letterRenderable2 = it }
             .exceptionally { null }
 
         ModelRenderable.builder()
-            .setSource(this, R.raw.letters_3)
+            .setSource(this, Uri.parse("letters_3.sfb"))
             .build()
             .thenAccept { this.letterRenderable3 = it }
             .exceptionally { null }
