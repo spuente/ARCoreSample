@@ -39,25 +39,17 @@ class MainActivity : AppCompatActivity() {
             val parentNode = TransformableNode(arFragment.transformationSystem)
             parentNode.setParent(anchorNode)
             parentNode.select()
-            val node1 = Node()
-            node1.setParent(parentNode)
-            node1.renderable = letterRenderablesMap[letterNames[0]]
 
-            val x1 = parentNode.children[1].localPosition.x + 0.1f
-            val y1 = parentNode.children[1].localPosition.y + 0.0f
-            val z1 = parentNode.children[1].localPosition.z + 0.0f
-            val node2 = Node()
-            node2.setParent(parentNode)
-            node2.localPosition = Vector3(x1, y1, z1)
-            node2.renderable = letterRenderablesMap[letterNames[1]]
-
-            val x2 = parentNode.children[2].localPosition.x + 0.1f
-            val y2 = parentNode.children[2].localPosition.y + 0.0f
-            val z2 = parentNode.children[2].localPosition.z + 0.0f
-            val node3 = Node()
-            node3.setParent(parentNode)
-            node3.localPosition = Vector3(x2, y2, z2)
-            node3.renderable = letterRenderablesMap[letterNames[2]]
+            for ((index, letterName) in letterNames.withIndex()) {
+                val offsetX = if (index == 0) 0.0f else 0.1f
+                val x = parentNode.children[index].localPosition.x + offsetX
+                val y = parentNode.children[index].localPosition.y + 0.0f
+                val z = parentNode.children[index].localPosition.z + 0.0f
+                val node = Node()
+                node.setParent(parentNode)
+                node.localPosition = Vector3(x, y, z)
+                node.renderable = letterRenderablesMap[letterName]
+            }
         }
     }
 }
