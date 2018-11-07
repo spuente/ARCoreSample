@@ -21,16 +21,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         arFragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment) as ArFragment
 
-        val letterNames = listOf(
+        val letters = listOf(
             "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
             "V", "W", "X", "Y", "Z"
-        ).map { "letters_$it.sfb" }
-
-        letterNames.forEach { modelName ->
+        )
+        letters.forEach { letter ->
             ModelRenderable.builder()
-                .setSource(this, Uri.parse(modelName))
+                .setSource(this, Uri.parse("letters_$letter.sfb"))
                 .build()
-                .thenAccept { this.letterRenderablesMap[modelName] = it }
+                .thenAccept { this.letterRenderablesMap[letter] = it }
                 .exceptionally { null }
         }
 
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             parentNode.setParent(anchorNode)
             parentNode.select()
 
-            val lettersNamesToDisplay = textToDisplay.map { "letters_$it.sfb" }
+            val lettersNamesToDisplay = textToDisplay.map { "$it" }
             for ((index, letterName) in lettersNamesToDisplay.withIndex()) {
                 val offsetX = if (index == 0) 0.0f else 0.1f
                 val x = parentNode.children[index].localPosition.x + offsetX
