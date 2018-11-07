@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var arFragment: ArFragment
     private var letterRenderablesMap = mutableMapOf<String, ModelRenderable>()
+    private val textToDisplay = "BAC"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +41,8 @@ class MainActivity : AppCompatActivity() {
             parentNode.setParent(anchorNode)
             parentNode.select()
 
-            for ((index, letterName) in letterNames.withIndex()) {
+            val lettersNamesToDisplay = textToDisplay.map { "letters_$it.sfb" }
+            for ((index, letterName) in lettersNamesToDisplay.withIndex()) {
                 val offsetX = if (index == 0) 0.0f else 0.1f
                 val x = parentNode.children[index].localPosition.x + offsetX
                 val y = parentNode.children[index].localPosition.y + 0.0f
