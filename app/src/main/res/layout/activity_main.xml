@@ -16,7 +16,43 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
             app:layout_constraintBottom_toTopOf="@+id/sceneform_fragment" android:layout_marginBottom="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toStartOf="@id/loadButton"/>
+            app:layout_constraintEnd_toStartOf="@id/redButton"/>
+
+    <Button
+            android:id="@+id/redButton"
+            android:text="R"
+            android:onClick="toggleRed"
+            android:minWidth="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/messageEditText"
+            app:layout_constraintBottom_toBottomOf="@id/messageEditText"
+            app:layout_constraintStart_toEndOf="@+id/messageEditText" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@id/greenButton" android:layout_marginEnd="8dp"/>
+
+    <Button
+            android:id="@+id/greenButton"
+            android:text="G"
+            android:onClick="toggleGreen"
+            android:minWidth="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/messageEditText"
+            app:layout_constraintBottom_toBottomOf="@id/messageEditText"
+            app:layout_constraintStart_toEndOf="@+id/redButton" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@id/blueButton" android:layout_marginEnd="8dp"/>
+
+    <Button
+            android:id="@+id/blueButton"
+            android:text="B"
+            android:onClick="toggleBlue"
+            android:minWidth="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/messageEditText"
+            app:layout_constraintBottom_toBottomOf="@id/messageEditText"
+            app:layout_constraintStart_toEndOf="@+id/greenButton" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@id/loadButton" android:layout_marginEnd="8dp"/>
 
     <Button
             android:id="@+id/loadButton"
@@ -26,7 +62,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/messageEditText"
             app:layout_constraintBottom_toBottomOf="@id/messageEditText"
-            app:layout_constraintStart_toEndOf="@+id/messageEditText" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/blueButton" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
 
     <fragment

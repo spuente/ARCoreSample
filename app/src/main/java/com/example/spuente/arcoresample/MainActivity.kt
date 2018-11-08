@@ -7,6 +7,8 @@ import android.view.View
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.math.Vector3
+import com.google.ar.sceneform.rendering.Color
+import com.google.ar.sceneform.rendering.MaterialFactory
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
@@ -62,5 +64,32 @@ class MainActivity : AppCompatActivity() {
 
     fun toggleGrid(view: View) {
         arFragment.arSceneView.planeRenderer.isVisible = !arFragment.arSceneView.planeRenderer.isVisible
+    }
+
+    fun toggleRed(view: View) {
+        MaterialFactory.makeOpaqueWithColor(this, Color(255f, 0f, 0f))
+            .thenAccept { material ->
+                letterRenderablesMap.forEach {
+                    it.value.material = material
+                }
+            }
+    }
+
+    fun toggleGreen(view: View) {
+        MaterialFactory.makeOpaqueWithColor(this, Color(0f, 255f, 0f))
+            .thenAccept { material ->
+                letterRenderablesMap.forEach {
+                    it.value.material = material
+                }
+            }
+    }
+
+    fun toggleBlue(view: View) {
+        MaterialFactory.makeOpaqueWithColor(this, Color(0f, 0f, 255f))
+            .thenAccept { material ->
+                letterRenderablesMap.forEach {
+                    it.value.material = material
+                }
+            }
     }
 }
