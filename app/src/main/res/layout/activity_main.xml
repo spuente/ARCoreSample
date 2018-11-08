@@ -9,7 +9,7 @@
     <EditText
             android:id="@+id/messageEditText"
             android:hint="Message"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -20,8 +20,8 @@
 
     <Button
             android:id="@+id/loadButton"
-            android:text="Load"
-            android:onClick="loadMessage"
+            android:text="Toggle Grid"
+            android:onClick="toggleGrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/messageEditText"
