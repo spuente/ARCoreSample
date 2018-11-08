@@ -3,18 +3,20 @@ package com.example.spuente.arcoresample
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var arFragment: ArFragment
     private var letterRenderablesMap = mutableMapOf<String, ModelRenderable>()
-    private val textToDisplay = "SAMPLE"
+    private lateinit var textToDisplay: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +34,8 @@ class MainActivity : AppCompatActivity() {
                 .thenAccept { this.letterRenderablesMap[letter] = it }
                 .exceptionally { null }
         }
+
+        textToDisplay = ""
 
         arFragment.arSceneView.planeRenderer.isEnabled = true
 
@@ -56,5 +60,9 @@ class MainActivity : AppCompatActivity() {
                 node.renderable = letterRenderablesMap[letterName]
             }
         }
+    }
+
+    fun loadMessage(view: View) {
+        textToDisplay = messageEditText.text.toString()
     }
 }
