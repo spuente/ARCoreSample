@@ -3,7 +3,6 @@ package com.example.spuente.arcoresample
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.View
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.math.Vector3
@@ -35,11 +34,9 @@ class MainActivity : AppCompatActivity() {
                 .exceptionally { null }
         }
 
-        textToDisplay = ""
-
         arFragment.arSceneView.planeRenderer.isEnabled = true
-
         arFragment.setOnTapArPlaneListener { hitResult, _, _ ->
+            textToDisplay = messageEditText.text.toString()
             val anchor = hitResult.createAnchor()
             val anchorNode = AnchorNode(anchor)
             anchorNode.setParent(arFragment.arSceneView.scene)
@@ -60,9 +57,5 @@ class MainActivity : AppCompatActivity() {
                 node.renderable = letterRenderablesMap[letterName]
             }
         }
-    }
-
-    fun loadMessage(view: View) {
-        textToDisplay = messageEditText.text.toString()
     }
 }
