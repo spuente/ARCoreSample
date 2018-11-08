@@ -61,6 +61,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun toggleGrid(view: View) {
-        arFragment.arSceneView.planeRenderer.isEnabled = !arFragment.arSceneView.planeRenderer.isEnabled
+        arFragment.arSceneView.planeRenderer.isVisible = !arFragment.arSceneView.planeRenderer.isVisible
     }
 }
